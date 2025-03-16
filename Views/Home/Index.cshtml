@@ -1,0 +1,45 @@
+﻿@* Views/Home/Index.cshtml *@
+@{
+    ViewData["Title"] = "AICloset - Virtual Closet";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <!-- Thêm liên kết đến CSS -->
+    <link rel="stylesheet" href="~/css/site.css" />
+    <!-- Thêm Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1 class="display-4">Welcome to AICloset</h1>
+        <p class="lead">Upload your photo and try on virtual clothes!</p>
+
+        <!-- Form để tải lên ảnh -->
+        <form id="uploadForm" enctype="multipart/form-data" class="mt-4">
+            <div class="form-group">
+                <label for="imageUpload" class="btn btn-primary">
+                    <i class="fas fa-upload"></i> Choose Photo
+                </label>
+                <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+            </div>
+            <button type="submit" class="btn btn-success mt-3">
+                <i class="fas fa-magic"></i> Process Image
+            </button>
+        </form>
+
+        <!-- Khu vực hiển thị kết quả -->
+        <div id="result" class="mt-5">
+            <h3>Processed Image</h3>
+            <img id="processedImage" src="" alt="Processed Image" class="img-fluid" style="display: none;">
+        </div>
+    </div>
+
+    <!-- Thêm liên kết đến JavaScript -->
+    <script src="~/js/site.js"></script>
+</body>
+</html>
